@@ -1,0 +1,24 @@
+Parameters:
+  
+  amiId:
+    Type: String
+    Default: ami-01816d07b1128cd2d
+    AllowedValues: [ami-01816d07b1128cd2d,ami-0e2c8caa4b6378d8c]
+
+  EC2InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues: [t2.micro,t2.small,t2.large]
+
+  
+
+
+Resources:
+
+  Server:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !Ref amiId
+      InstanceType: !Ref EC2InstanceType
+      KeyName: jan2
+    
